@@ -46,6 +46,10 @@ def update():
     elif status == "off":
         send_message(CHAT_ID, "TINUBUUUUUUUUUU!!!!!!!!!!!!!!")
 
+    return "ok", 200
+
+
+
 
 
 def send_message(chat_id, text):
