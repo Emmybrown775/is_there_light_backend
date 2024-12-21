@@ -9,7 +9,7 @@ CHAT_ID = os.environ.get('CHAT_ID')
 
 tel_response = requests.post(
     f"https://api.telegram.org/bot{TOKEN}/setWebhook",
-    json={"url": f"https://178a-102-90-100-4.ngrok-free.app/{TOKEN}"}
+    json={"url": f"https://is-there-light-backend.onrender.com/{TOKEN}"}
 )
 
 @app.route(f'/{TOKEN}', methods=['POST'])
