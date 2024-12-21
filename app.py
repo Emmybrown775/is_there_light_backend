@@ -9,7 +9,7 @@ CHAT_ID = os.environ.get('CHAT_ID')
 
 tel_response = requests.post(
     f"https://api.telegram.org/bot{TOKEN}/setWebhook",
-    json={"url": f"https://is-there-light-backend.onrender.com/{TOKEN}"}
+    json={"url": f"https://178a-102-90-100-4.ngrok-free.app/{TOKEN}"}
 )
 
 @app.route(f'/{TOKEN}', methods=['POST'])
@@ -24,14 +24,6 @@ def bot_webhook():  # put application's code here
         if text == "/start":
             send_message(chat_id, "Welcome Emmy. If you're not me, politely fuck off")
 
-        elif text == "/check":
-            response = requests.get("http://192.168.251.140/data")
-            status = response.json()["status"]
-
-            if status == "on":
-                send_message(chat_id, "There is still light boss, relax.")
-            else :
-                send_message(chat_id, "Where you see light?? Why you dey check, abeg stop disturbing the server.")
 
     return "ok", 200
 
